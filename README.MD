@@ -21,4 +21,5 @@ This project will eventually allow the upload of a nested folder structure of to
 
 Eventually the application will be released into the Druapl Marketplace for Modules and the WordPress Plugin Directory as well as from here in Git Hub.
 
-Lead Developer: Michael Scott McGinn
+Concept Developer: Michael Scott McGinn
+Lead Developer: Ed Reel
