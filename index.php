@@ -1,8 +1,9 @@
  <!DOCTYPE html>
  <html>
-
+<!--This is the index file front end to allow the upload of a .zip file containing .txt formated articles. -->
+<!-- It will uncompress them and turn them into a .csv file that can be imorted into a CMS like Drupal -->
  <head>
-     <title>Webslesson Tutorial | How to Extract a Zip File in Php</title>
+     <title>PLR-Importer</title>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
