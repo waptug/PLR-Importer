@@ -4,6 +4,7 @@
 * PLR-Importer V1 Alpha
 * Concept by Michael Scott McGinn
 * Co-developed by: Michael Scott McGinn and Ed Reel
+* Copyright 2022 by GeekZoneHosting.Com, LLC
 ********************************************************/
     if (isset($_POST["btn_zip"])) {
         $output = '';
