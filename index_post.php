@@ -1,4 +1,10 @@
 <?php 
+
+/*******************************************************
+* PLR-Importer V1 Alpha
+* Concept by Michael Scott McGinn
+* Co-developed by: Michael Scott McGinn and Ed Reel
+********************************************************/
     if (isset($_POST["btn_zip"])) {
         $output = '';
         if ($_FILES['zip_file']['name'] != '') {
