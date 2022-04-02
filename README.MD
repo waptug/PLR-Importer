@@ -18,7 +18,9 @@ Future versions of this module will allow for different article formats to be im
 Future PLR Import Engine plugin extensions will allow for importing Word Docs and possibly PDF documents too.
 And with the many available PDF creation modules available you can allow visitors to print out your content as PDF’s for simple reading, printing and sharing.
 
-=====
+### More technical info follows here:
+
+
 This application converts txt files into .csv files.
 This application allows the upload of a .zip file with a folder containing .txt files that have a known format of 
 
