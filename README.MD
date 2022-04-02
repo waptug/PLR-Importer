@@ -44,3 +44,6 @@ Eventually the application will be released into the Druapl Marketplace for Modu
 
 Concept Developer: Michael Scott McGinn
 Lead Developer: Ed Reel
+
+This project is looking for funding for the development of it. Visit https://givesendgo.com/plrimporter to help support it.
+
