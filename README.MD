@@ -1,3 +1,8 @@
+### What Problem does this project solve?
+It makes it easy to import large librarys of text articles into Drupal Quickly.
+
+### Who will use this project?
+
 PLR Importer helps writers focus on writing great articles because it lets them write in the writing tool they are most used to like word or note and not worry about learning how to write in Drupal or even worry about learning anything about Drupal.
 
 Writers will simply save there articles as a plain text document that follows a simple format that looks like this.
