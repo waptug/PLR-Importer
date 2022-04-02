@@ -1,5 +1,6 @@
 ### What Problem does this project solve?
-It makes it easy to import large librarys of text articles into Drupal Quickly.
+It makes it easy to import large librarys of text article into Drupal Quickly by allowing a .zip file to be uploaded and automaticly
+uncompressed and then having all the articles parsed and converted into Article Content nodes.
 
 ### Who will use this project?
 
