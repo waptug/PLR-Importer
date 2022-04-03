@@ -2,7 +2,7 @@
 https://plrimporter.com
 
 ### What Problem does this project solve?
-It makes it easy to import large librarys of text articles into Drupal Quickly by allowing a .zip file to be uploaded and automaticly
+It makes it easy to import large libraries of text articles into Drupal Quickly by allowing a .zip file to be uploaded and automaticly
 uncompressed and then having all the articles parsed and converted into Article Content nodes while automaticly taging the articles with the name of
 the folder they were in.  It also removes the need for the writers of the articles to know anything about how Drupal works to create content 
 for publication.
