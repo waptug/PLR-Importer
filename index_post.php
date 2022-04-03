@@ -75,7 +75,15 @@
         if ($f === false) {
             die('Error opening the file ' . $filename);
         }
+        /*
+        Some how this code needs to catch each file as it passes through the loop to split it out
 
+        $title = strtok($content, "\n");
+        $content = trim(substr($content, strpos($content, "\n") + 1));
+
+        The we will have the title in $title and the body content in $content. That we can meld into the csv flow.
+        
+        */
         // write each row at a time to a file
         foreach ($main_data as $row) {
             fputcsv($f,
