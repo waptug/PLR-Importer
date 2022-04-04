@@ -12,7 +12,10 @@
  <body>
      <br />
      <div class="container" style="width:500px;">
-         <h3 align="">How to Extract a Zip File in Php</h3><br />
+         <h3 align="">PLR Importer - Alpha V1.0</h3><br />
+         <p>Save all your .txt PLR Articles in a zip file and name the zip file<br/>
+          with the catagory tag name for your articles.<br/>
+          Then Upload it here to have it converted into a .csv file that you can import into Drupal as Articles</p>
          <form action="index_post.php" method="post" enctype="multipart/form-data">
              <label>Please Select Zip File</label>
              <input type="file" name="zip_file" />
