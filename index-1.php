@@ -30,6 +30,9 @@
             ?>
      </div>
      <br />
+     <div class="container" style="width:500px;">
+     Need hosting or a domain for your blog? <br/>
+     Check out <a href="https://mtbn.net">MTBN.NET</a>
  </body>
 
  </html>
