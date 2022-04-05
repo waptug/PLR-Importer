@@ -13,7 +13,7 @@ $filecounter=0;
 $tag="";
 $tagName="";
 $processedfile=Array();
-$combinedfiles=Array("title,body,tag");
+$combinedfiles=Array();
 
     if (isset($_POST["btn_zip"])) {
         $output = '';
@@ -76,20 +76,31 @@ $combinedfiles=Array("title,body,tag");
             $tagName=$tag;
             
 
-            $processedfile=$title.','.$content.','.$tagName;
+            //$processedfile=$title.','.$content.','.$tagName;
+            //$processedfile=$title.$content.$tagName;
+            //$processedfile=$title;
+            //$processedfile+=$content;
+            //$processedfile+=$tagName;
+            array_push($processedfile,$title);
+            array_push($processedfile,$content);
+            array_push($processedfile,$tag);
+
             echo "<h1> processedfile array print_r contains</h1>";
             print_r($processedfile);
 
             echo "<br/><h1>Title=</h1>".$title."<br/><h1>Content=</h1>".$content."<br/><h1>tagName=</h1>".$tagName."<br/>";
             // end of test code
+            $title="";
+            $content="";
             
             //push processed file into combinedfiles array
             array_push($combinedfiles,$processedfile);
            
             //incriment linecounter to keep track of the number of files processed
             $line_counter+=1;
-            //
 
+            //Clear the array for another file.
+            $processedfile=Array();
         }
     
         //Report that we are done combining the files.
@@ -117,7 +128,7 @@ $combinedfiles=Array("title,body,tag");
         die('<h1>Error opening the file</h1> ' . $filename);
     }
     //Convert combinedfiles into array main_data
-    $main_data[]=$combinedfiles;
+    $main_data=$combinedfiles;
 
     // write each row of main_data to a .csv file generated and stored in filename var.
     $counter=0;
@@ -210,6 +221,6 @@ echo "<br/>===================================================<br/>";
 ?>
 <html>
     <body>
-       <!-- <a href="<?php //echo $filename; ?>"><?php //echo $filename; ?></a> -->
+        <a href="<?php echo $filename; ?>"><?php echo $filename; ?></a> 
 </body>
 </html>
