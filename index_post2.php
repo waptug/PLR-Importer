@@ -10,6 +10,8 @@
 //The section extracts the files from the .zip and creates a folder to store the .txt files
 echo "Uncompressing zip files.<br/>";
 $filecounter=0;
+$tag="";
+$tagName="";
     if (isset($_POST["btn_zip"])) {
         $output = '';
         if ($_FILES['zip_file']['name'] != '') {
@@ -17,7 +19,8 @@ $filecounter=0;
             $file_name = $_FILES['zip_file']['name'];
             $array = explode(".", $file_name);
             $name = $array[0];
-            
+            echo $name."<br/>";
+            $tag=$name;
             $ext = $array[1];        
             if ($ext == 'zip') {
                 $auto_generated = time() . rand(111, 999);
@@ -38,18 +41,21 @@ $filecounter=0;
         //if ($_FILES['zip_file']['name'] != ''){$filecounter=+1;}
         $filecounter=+1;
     }
+    //End of File Extraction. 
+    //All files should be extracted from the .zip file at this point and in the created folder.
     
     //Code added to display progress. When we get the code working we can comment this out.
     $domain="https://plrimporter.com/";//hard coded but would need to change when it gets installed on another domain.
     
     echo $filecounter." .zip files upcompressed<br/>";
     echo "==================<br/>The Path to your files is: ".$location."<br/>=============<br/>";
-    
+    // die;
     // End of progress display
     
     //Grabs the list of file paths for each file in the directory and loops through them putting them into $file
     //Everything happens in this loop to parse each file line by line in to $data array and create the .csv file
-    $line_counter=0;//display the array position line is put in todo:fix it so it works for entire loop. 
+    
+    $line_counter=0;//display the array position line is put in  
 
     foreach(glob($path.'/*.*') as $file) {
          echo "<br/>====== processing file name ==========<br/>".$file."<br>========================<br/>";
@@ -57,17 +63,18 @@ $filecounter=0;
         $first_line = true;
         
         while (!feof($single_txt_file)) {
-            $line = fgets($single_txt_file);// grabs one line of the file that the pointer is pointing to as a string $line
-         
+            //$line = fgets($single_txt_file);// grabs one line of the file that the pointer is pointing to as a string $line
+             $fullfile=file_get_contents($file);
             //Test code to split up the file, not part of the orginal file
 
-            //$title = strtok($single_txt_file, "\n");
-            //$content = trim(substr($single_txt_file, strpos($single_txt_file, "\n") + 1));
+            $title = strtok($fullfile, "\n");
+            $content = trim(substr($fullfile, strpos($fullfile, "\n") + 1));
+            $tagName=$tag;
             
 
-            //echo "line var=".$line."<br/>Title=".$title."<br/>Content=".$content."<br/>";
+            echo "line var=".$line."<br/>Title=".$title."<br/>Content=".$content."<br/>tagName=".$tagName."<br/>";
             // end of test code
-
+//die;
              
              if($first_line){
                 echo "<br/>============ data[".$line_counter."] =============================</br>";
@@ -84,7 +91,7 @@ $filecounter=0;
             $line_counter++;
         }
         $arraylength=count($data);
-        echo "<br/><h1>data contains:".$arraylength."-data[3]=".$data[3]."=print_r=".print_r($data)."<br/></h1>";
+        echo "<br/><h1>data contains:".$arraylength."elements. -data[3]=".$data[3]."=print_r=".print_r($data)."<br/></h1>";
 
         $new_data[0] = "";
         foreach($data as $da){
@@ -97,12 +104,12 @@ $filecounter=0;
             }
         }
     
-    echo "<br/>========= array dump new_data[0] array ========<br/>";
-        print_r($new_data[0]);
-    echo "<br/>==============================<br/>";    
+          echo "<br/>========= array dump new_data[0] array ========<br/>";
+          print_r($new_data[0]);
+          echo "<br/>==============================<br/>";    
         
         $main_data = [
-            ['Title', 'body'],
+            ['title', 'body','tag'],
             ['My Title', $new_data[0]]
         ];
 
