@@ -12,6 +12,9 @@ echo "Uncompressing zip files.<br/>";
 $filecounter=0;
 $tag="";
 $tagName="";
+$processedfile=Array();
+$combinedfiles=Array("title","body","tag");
+
     if (isset($_POST["btn_zip"])) {
         $output = '';
         if ($_FILES['zip_file']['name'] != '') {
@@ -72,15 +75,69 @@ $tagName="";
             $tagName=$tag;
             
 
-            echo "<br/>Title=".$title."<br/>Content=".$content."<br/>tagName=".$tagName."<br/>";
-            // end of test code
+            $processedfile='"'.$title.'","'.$content.'","'.$tagName.'",';
+            echo "<h1> processedfile array print_r contains</h1>";
+            print_r($processedfile);
 
+            echo "<br/><h1>Title=</h1>".$title."<br/><h1>Content=</h1>".$content."<br/><h1>tagName=</h1>".$tagName."<br/>";
+            // end of test code
+            
+            //push processed file into combinedfiles array
+            array_push($combinedfiles,$processedfile);
+           
+            //incriment linecounter to keep track of the number of files processed
+            $linecounter+=1;
+            //
 
         }
-    echo "<br/>Close File";
-    fclose($single_txt_file);
-    echo "<br/>End Program";
-    die;
+    
+        //Report that we are done combining the files.
+        echo "<br/><h1>Close single_txt_file </h1>";
+        fclose($single_txt_file);
+    
+    //Report out results of processing
+    echo "<h1>Processed: ".$linecounter." files. <h1>";
+    echo "<h1>combinedfiles array print_r contains:</h1>";
+    print_r($combinedfiles);
+    echo "<br/><h1>End Combining File</h1>";
+
+    //Write combinedfiles to a .csv file
+    echo "<h1>Write combinedfiles into .csv file</h1>";
+
+
+    $filename = $auto_generated.'.csv';
+    echo "<br/>==================================================<br/>";
+    echo "name of file csv will be written into:".$filename;
+    echo "<br/>===================================================<br/>";
+
+    $f = fopen($filename, 'w');// open csv file for writing
+
+    if ($f === false) {
+        die('<h1>Error opening the file</h1> ' . $filename);
+    }
+
+    // write each row of combinedfiles to a .csv file generated and stored in filename var.
+    $counter=0;
+    foreach ($combinedfiles as $row) {
+        //fputcsv($f,$row,",");
+        fwrite($f,$row);
+        $counter+=1;
+        echo "<br/><h1>Row # ".$counter.":</h1><h1>========== print_r contains =============</h1>".print_r([$row])."<h1>================================</h1>";
+    }
+
+    // close the file
+    fclose($f);
+
+echo "<br/>================ Processing Completed =====================<br/>";
+echo "Your result is here:".$filename;
+    //End writing combinedfiles to .csv file
+
+    //Display link to download .csv file
+    echo "<h1>Display Link to download .csv file.</h1>";
+
+    //End of program display message to user.
+    echo "<h1>Processing Complete</h1>";
+    die;//Stop the program here.
 //End of new refactor
 // rest of the old code
 /*
