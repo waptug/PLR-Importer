@@ -13,7 +13,7 @@ $filecounter=0;
 $tag="";
 $tagName="";
 $processedfile=Array();
-$combinedfiles=Array("title","body","tag");
+$combinedfiles=Array("title,body,tag");
 
     if (isset($_POST["btn_zip"])) {
         $output = '';
@@ -68,14 +68,15 @@ $combinedfiles=Array("title","body","tag");
         //while (!feof($single_txt_file)) {
             //$line = fgets($single_txt_file);// grabs one line of the file that the pointer is pointing to as a string $line
              $fullfile=file_get_contents($file);
-            //Test code to split up the file, not part of the orginal file
+            
+             //Code to split up the file
 
             $title = strtok($fullfile, "\n");
             $content = trim(substr($fullfile, strpos($fullfile, "\n") + 1));
             $tagName=$tag;
             
 
-            $processedfile='"'.$title.'","'.$content.'","'.$tagName.'",';
+            $processedfile=$title.','.$content.','.$tagName;
             echo "<h1> processedfile array print_r contains</h1>";
             print_r($processedfile);
 
@@ -86,7 +87,7 @@ $combinedfiles=Array("title","body","tag");
             array_push($combinedfiles,$processedfile);
            
             //incriment linecounter to keep track of the number of files processed
-            $linecounter+=1;
+            $line_counter+=1;
             //
 
         }
@@ -96,7 +97,7 @@ $combinedfiles=Array("title","body","tag");
         fclose($single_txt_file);
     
     //Report out results of processing
-    echo "<h1>Processed: ".$linecounter." files. <h1>";
+    echo "<h1>Processed: ".$line_counter." files. <h1>";
     echo "<h1>combinedfiles array print_r contains:</h1>";
     print_r($combinedfiles);
     echo "<br/><h1>End Combining File</h1>";
@@ -115,12 +116,14 @@ $combinedfiles=Array("title","body","tag");
     if ($f === false) {
         die('<h1>Error opening the file</h1> ' . $filename);
     }
+    //Convert combinedfiles into array main_data
+    $main_data[]=$combinedfiles;
 
-    // write each row of combinedfiles to a .csv file generated and stored in filename var.
+    // write each row of main_data to a .csv file generated and stored in filename var.
     $counter=0;
-    foreach ($combinedfiles as $row) {
-        //fputcsv($f,$row,",");
-        fwrite($f,$row);
+    foreach ($main_data as $row) {
+        fputcsv($f,$row);
+        //fwrite($f,$row);
         $counter+=1;
         echo "<br/><h1>Row # ".$counter.":</h1><h1>========== print_r contains =============</h1>".print_r([$row])."<h1>================================</h1>";
     }
@@ -137,7 +140,7 @@ echo "Your result is here:".$filename;
 
     //End of program display message to user.
     echo "<h1>Processing Complete</h1>";
-    die;//Stop the program here.
+    //die;//Stop the program here.
 //End of new refactor
 // rest of the old code
 /*
