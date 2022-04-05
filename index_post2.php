@@ -60,9 +60,9 @@ $tagName="";
     foreach(glob($path.'/*.*') as $file) {
          echo "<br/>====== processing file name ==========<br/>".$file."<br>========================<br/>";
         $single_txt_file = fopen($file, "r");
-        $first_line = true;
+        //$first_line = true;
         
-        while (!feof($single_txt_file)) {
+        //while (!feof($single_txt_file)) {
             //$line = fgets($single_txt_file);// grabs one line of the file that the pointer is pointing to as a string $line
              $fullfile=file_get_contents($file);
             //Test code to split up the file, not part of the orginal file
@@ -72,10 +72,18 @@ $tagName="";
             $tagName=$tag;
             
 
-            echo "line var=".$line."<br/>Title=".$title."<br/>Content=".$content."<br/>tagName=".$tagName."<br/>";
+            echo "<br/>Title=".$title."<br/>Content=".$content."<br/>tagName=".$tagName."<br/>";
             // end of test code
-//die;
-             
+
+
+        }
+    echo "<br/>Close File";
+    fclose($single_txt_file);
+    echo "<br/>End Program";
+    die;
+//End of new refactor
+// rest of the old code
+/*
              if($first_line){
                 echo "<br/>============ data[".$line_counter."] =============================</br>";
                 echo "<h1>$line</h1>";// if this is the first line of the file then this is the title
@@ -138,9 +146,10 @@ echo "<br/>===================================================<br/>";
     echo "<br/>================ Processing Completed =====================<br/>";
     echo "Your result is here:".$filename;
 
+    */
 ?>
 <html>
     <body>
-        <a href="<?php echo $filename; ?>"><?php echo $filename; ?></a>
+       <!-- <a href="<?php //echo $filename; ?>"><?php //echo $filename; ?></a> -->
 </body>
 </html>
