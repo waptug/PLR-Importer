@@ -16,6 +16,8 @@
          <p>Save all your .txt PLR Articles in a zip file and name the zip file<br/>
           with the catagory tag name for your articles.<br/>
           Then Upload it here to have it converted into a .csv file that you can import into Drupal as Articles</p>
+          <p>All files in the zip must end in .txt and be saved in the UTF8 charecter set.</p>
+          <p>File names must not have spaces in the name.</p>
          <form action="index_post2.php" method="post" enctype="multipart/form-data">
              <label>Please Select Zip File</label>
              <input type="file" name="zip_file" />

@@ -59,8 +59,8 @@ $combinedfiles=Array();
     //Everything happens in this loop to parse each file line by line in to $data array and create the .csv file
     
     $line_counter=0;//display the array position line is put in  
-
-    foreach(glob($path.'/*.*') as $file) {
+    // pull all fiels with the .txt extention and ignore the rest.
+    foreach(glob($path.'/*.txt') as $file) {
          echo "<br/>====== processing file name ==========<br/>".$file."<br>========================<br/>";
         $single_txt_file = fopen($file, "r");
         //$first_line = true;
