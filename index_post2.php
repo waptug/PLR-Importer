@@ -221,6 +221,15 @@ echo "<br/>===================================================<br/>";
 ?>
 <html>
     <body>
-        <a href="<?php echo $filename; ?>"><?php echo $filename; ?></a> 
+    <h1>SUCCESS! PLR Importer has converted your files into a combined .csv file.</h1>
+    <h2>Click the file below to download to your local pc.</h2>
+    <h3>You can then import them to Drupal or any other Content Management System with a .csv importer.</h3>
+    <h1>Click this:><a href="<?php echo $filename; ?>"><?php echo $filename; ?></a></h1> 
+    <hr>
+    <p>Suggested Modules for Drupal to give you .csv importing ability:</p>
+    <a href="https://drupal.org/project/csv_importer">CSV Importer</a>
+    <br>
+    <p>Suggested Drupal Web Hosting:</p>
+    <a href="https://mtbn.net/drupal-web-hosting/">MTBN.NET Drupal Web Hosting</a>
 </body>
 </html>
