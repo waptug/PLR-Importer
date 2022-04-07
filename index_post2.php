@@ -227,9 +227,27 @@ echo "<br/>===================================================<br/>";
     <h1>Click this:><a href="<?php echo $filename; ?>"><?php echo $filename; ?></a></h1> 
     <hr>
     <p>Suggested Modules for Drupal to give you .csv importing ability:</p>
-    <a href="https://drupal.org/project/csv_importer">CSV Importer</a>
+    <a href="https://drupal.org/project/csv_importer" target="_blank">CSV Importer</a>
     <br>
+    <p>Suggested Plugin for WordPress to give you .csv importing ability:</p>
+    <a href="hhttps://wordpress.org/plugins/wp-all-import/" target="_blank">Wp All Import</a> 
     <p>Suggested Drupal Web Hosting:</p>
     <a href="https://mtbn.net/drupal-web-hosting/">MTBN.NET Drupal Web Hosting</a>
+    <br/>
+    <p>Suggested WordPress Web Hosting:</p>
+    <a href="https://mtbn.net/wordpress-hosting/">MTBN.NET WordPress Web Hosting</a>
+    <h2>Instructions for using your .csv file</h2>
+    <ol>
+        <li>After you have downloaded your file you may need to edit it in a spreadsheet to add you header row to name your columes so your CMS .csv importer tool can map the data to the correct fields in your Cms</li>
+        <li>You will need to insert a row at the top of your sheet and add the field names you want your data to import into.</li>
+        <li>We did this so you were free to name the fields however you needed to for your .csv importer tool.</li>
+        <li>You will need to read the documentation of the .csv importing tool you are using to understand how to name your header row so it will work.</li>
+        <li>You will need to read your .csv importer tool documentation to learn how to set it up correctly.</li>
+        <li>Be sure to save your sheet in .csv format so you keep it in a proper format for your importer tool.</li> 
+    </ol>
+    <h2>Video tutorials coming soon. Join our git hub project and watch this project for code updates. <a href="https://github.com/waptug/PLR-Importer" target="_blank">PLR-Importer</a></h2>
+    <h2>This project is looking for angle funding and additional developers to join our team.</h2>
+    <h2>Thank you to Michael McGinn at GeekZoneHosting.Com and MTBN.NET for being our first angle funder.</h2>
+    <h2>Development Team:Concept and SaaS application coding by Michael McGinn. Drupal Module Development by Ed Reel.</h2>
 </body>
 </html>

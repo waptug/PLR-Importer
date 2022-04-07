@@ -1,9 +1,0 @@
-The Title of the Article 1
-
-
-The first line of the body of the article.
-
-The second line of the file.
-
-The third line.
-
