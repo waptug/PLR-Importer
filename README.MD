@@ -1,5 +1,7 @@
-### PLR Importer
+### PLR Importer SaaS Alpha V1
 https://plrimporter.com
+
+See also https://github.com/Drupal-PLR-Importer For the Drupal Module Project.
 
 ### What Problem does this project solve?
 It makes it easy to import large libraries of text articles into Drupal Quickly by allowing a .zip file to be uploaded and automaticly
