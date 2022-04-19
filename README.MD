@@ -17,8 +17,10 @@ Writers will simply save there articles as a plain text document that follows a 
 The first line of the article is the title.
 The rest of the page is the article content. Just plain text no with graphics or tables or anything but the article text.
 
-After the writer is done they save their article into a folder that has the name of the topic of the articles it contains. 
-Then they run the folder into a zip file to compress it and package it up with the other files they have created that fit a common topic.  
+After the writer is done they save their articles into a folder that has the name of the topic of the articles it contains.
+
+Then they run the combine the files in that folder into a zip file and save it with the name of the topic of the articles 
+to compress it and package it up with the other files they have created that fit a common topic.  
 
 Then they can send that file into the PLR Importer Module in Drupal and it will automatically create the articles in Drupal and tag
 the article with the name of the folder the articles were saved in.  This saves a bunch of time because the articles are processed all at the same time. 
@@ -29,9 +31,9 @@ upload that folder into Drupal and it will create all the Article nodes.
 If the site has workflows setup then the articles that get uploaded will be ready for the Publisher or Content Manager to review and make any final edits 
 in Drupal and then publish them.
 
-This works great for community newspaper organizations and community groups that have a team of content creators and don’t want to require them to all have 
-to log in to the Drupal site just to edit an article.  They can just email their articles as zip files to the Site Manager and they can then upload the zip 
-files into Drupal. 
+This works great for community newspaper organizations and community groups that have a team of content creators and don’t want to 
+require them to all have to log in to the Drupal site just to edit an article.  
+They can just email their articles as zip files to the Site Manager and they can then upload the zip files into Drupal. 
 
 Future versions of this module will allow for different article formats to be imported automatically so the various PLR Library formats can be quickly 
 imported and the content organized correctly.
@@ -68,7 +70,7 @@ of the folder for taxonomi and catagory classification.
 
 Eventually the application will be released into the Druapl Marketplace for Modules and the WordPress Plugin Directory as well as from here in Git Hub.
 
-Concept Developer: Michael Scott McGinn
+Concept and SaaS Developer: Michael Scott McGinn
 Lead Developer: Ed Reel
 
 This project is looking for funding for the development of it. Visit https://givesendgo.com/plrimporter to help support it.
