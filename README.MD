@@ -5,7 +5,8 @@ See also https://github.com/waptug/Drupal-PLR-Importer For the Drupal Module Pro
 
 ### What Problem does this project solve?
 It makes it easy to import large libraries of text articles into Drupal Quickly by allowing a .zip file to be uploaded and automaticly
-uncompressed and then having all the articles parsed and converted into Article Content nodes while automaticly taging the articles with the name of
+uncompressed and then having all the articles parsed and converted into a Comma Seperated Value file that is ready to import into
+your Drupal Article Content nodes while automaticly taging the articles with the name of
 the folder they were in.  It also removes the need for the writers of the articles to know anything about how Drupal works to create content 
 for publication.
 
@@ -50,15 +51,19 @@ This application converts txt files into .csv files.
 This application allows the upload of a .zip file with a folder containing .txt files that have a known format of 
 
 ## Line 1 - Contains the title of the article.
-## Line 2 - EOF contains the body of the article.
+## LIne 2 - is blank
+## Line 3 to the End of the File contains the body of the article.
 
-The goal of this application is to create a combined .csv file of all the article files in the folder so that the .csv file can be upoaded into a cms such 
-as Drupal or WordPress if the cms has a module or plugin that can accept a .csv file as input and convert them to articles or posts in the blog.
+The solution of this application is to create a combined .csv file of all the article files in the folder so that 
+the .csv file can be upoaded into a cms such as Drupal or WordPress if the cms has a module or plugin that can accept a .csv file as 
+input and convert them to articles or posts in the blog.
 
 Work is in progress to meld various article formats which can be imported to match the various PLR library article formts one can find.
 
+
 Work is being done to allow the direct import of the files into Drupal Article Nodes and skip the conversion of the .txt file into .csv file that then 
 would need to be manually uploaded via a csv importer Module or Plugin.
+See https://github.com/waptug/Drupal-PLR-Importer For the Drupal Module Project.
 
 Different extensible format engines are being developed to allow a number of PLR formats to be imported and converted to Article Nodes in Drupal and Posts 
 in WordPress and HUGO Markdown Post formats.
